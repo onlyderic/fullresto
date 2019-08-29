@@ -1,0 +1,969 @@
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('/assets/fonts/fontawesome-webfont.eot?v=4.1.0');
+    src: url('/assets/fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'), url('/assets/fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'), url('/assets/fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'), url('/assets/fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'pacificoregular';
+    src: url('../fonts/pacifico-webfont.eot');
+    src: url('../fonts/pacifico-webfont.eot?#iefix') format('embedded-opentype'),  url('../fonts/pacifico-webfont.woff') format('woff'),  url('../fonts/pacifico-webfont.ttf') format('truetype'),  url('../fonts/pacifico-webfont.svg#pacificoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+a:hover,
+a:focus {
+    text-decoration: none !important;
+}
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/**
+ * Home Page
+ */
+.fullresto-access {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+    background-color: #F2F2F2;
+}
+.fullresto-access > div {
+    padding: 0px 20%;
+    box-shadow: 0 2px 2px #B60000;
+}
+.fullresto-access > div > div {
+    position: relative;
+}
+.fullresto-access button {
+    background-color: #F2F2F2;
+    color: #333333;
+}
+.fullresto-access button:hover {
+    background-color: #E0E0E0;
+    color: #000000;
+}
+.fullresto-access button.active {
+    font-weight: bold;
+}
+.fullresto-access button + .fullresto-arrow {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-color: transparent;
+    bottom: -9px;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px 10px 0;
+    border-top-color: #C9302C;
+    display: none;
+}
+.fullresto-access button.active + .fullresto-arrow {
+    display: block;
+}
+.fullresto-access button:hover + .fullresto-arrow {
+    border-top-color: #AC2925;
+}
+
+/**
+ * Banner
+ */
+.fullresto-banner {
+    background-image: url(../images/banner.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 230px;
+}
+
+/**
+ * Miscellaneous
+ */
+.no-border {
+    border: none !important;
+}
+.spacer-30 {
+    height: 30px;
+}
+.spacer-20 {
+    height: 20px;
+}
+.spacer-10 {
+    height: 10px;
+}
+.loadmore {
+    margin-top: 20px;
+}
+.facebook-pic {
+    width: 30px;
+}
+.facebook-pic,
+.facebook-pic + span {
+    margin-right: 10px;
+}
+.btn[data-btn=facebook-booking] {
+    background-color: #3B5998;
+    color: #FFFFFF;
+}
+.spin-loading {
+    width: 100%;
+    font-size: 2em;
+    text-align: center;
+}
+
+/**
+ * Deal Items
+ */
+.perx-item {
+    margin-bottom: 25px;
+    position: relative;
+}
+.perx-item > div {
+    border: 1px solid #ccc;
+    overflow: hidden;
+    box-shadow: 6px 6px 12px #D9D9D9;
+}
+/* Image */
+.perx-item > div > a > div {
+    width: 360px;
+    height: 205px;
+    background-size: 360px 205px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* Detail Box */
+.perx-item > div > div.fullresto-detail {
+    padding: 0px 10px;
+    position: relative;
+}
+.perx-item > div > div.fullresto-detail + div {
+    position: absolute;
+    top: 170px;
+    right: 16px;
+    background-color: #FFFFFF;
+    opacity: 0.5;
+    padding: 3px 5px;
+    font-size: 12px;
+}
+/* Title */
+.perx-item h4 {
+    height: 40px;
+    overflow: hidden;
+    margin: 10px 0px 0px;
+    width: calc(100% - 70px);
+}
+.perx-item h4 > a {
+    color: #181A1A !important;
+}
+/* Detail */
+.perx-item .fullresto-detail > div:first-child {
+    position: relative;
+    width: 100%;
+}
+/* Summary */
+.fullresto-summary {
+    color: #6D6D6D;
+}
+.fullresto-summary > div {
+    width: 50%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 3px 0px;
+    text-align: right;
+}
+.fullresto-summary > div:first-child {
+    text-align: left;
+}
+/* Deals */
+.deals {
+    width: 100%;
+    height: 70px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 5px 5px;
+    font-size: 0px;
+    position: relative;
+}
+.deals-panel {
+    height: auto;
+    padding: 5px 0px;
+}
+.deals > .deals-scroll {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+}
+.deals-panel > .deals-scroll {
+    position: initial;
+}
+.deals > .deals-scroll > div {
+    display: inline-block;
+}
+.deals-panel > .deals-scroll > div {
+    float: left;
+}
+.deal {
+    background-image: url(../images/badge.png);
+    background-size: 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 65px;
+    height: 60px;
+    padding: 8px 5px;
+    text-align: center;
+    margin: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+    color: #B60000;
+}
+.deal a {
+    color: #B60000;
+}
+.deal div {
+    font-size: 9px;
+    color: #FFFFFF;
+}
+.deal.active {
+    background-image: url(../images/badge-active.png);
+    color: #FFFFFF;
+}
+.deal.active div {
+    font-size: 9px;
+    color: #B60000;
+}
+/* Deals Navigator */
+.fullresto-nav {
+    position: absolute;
+    bottom: 0px;
+    padding: 20px 0px;
+    width: 20px;
+    z-index: 1;
+}
+.fullresto-nav > span {
+    color: #6D6B6C;
+    font-size: 24px;
+    cursor: pointer;
+}
+.fullresto-nav:hover {
+    background-color: #FFFFFF;
+    opacity: 0.7;
+}
+.fullresto-nav:hover > span {
+    color: #000;
+}
+.fullresto-nav[data-nav=left] {
+    left: 0px;
+}
+.fullresto-nav[data-nav=right] {
+    right: 0px;
+}
+.panel-form .fullresto-nav[data-nav=left] {
+    left: 15px;
+}
+.panel-form .fullresto-nav[data-nav=right] {
+    right: 15px;
+}
+.perx-item .fullresto-nav {
+    display: none;
+}
+.perx-item:hover .fullresto-nav {
+    display: block;
+}
+
+/**
+ * Ratings
+ */
+.perx-item .fullresto-detail .ratings,
+.fullresto-rating .ratings {
+    width: 70px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.fullresto-rating .ratings {
+    width: 90px;
+    top: -5px;
+}
+.manage-bookings .fullresto-rating .ratings {
+    width: 170px;
+    padding-top: 8px;
+    position: relative;
+}
+.perx-item .fullresto-detail .ratings > div {
+    width: 70px;
+    height: 17px;
+    background-size: 14px !important;
+}
+.fullresto-rating .ratings > div {
+    width: 90px;
+    height: 25px;
+    background-size: 18px !important;
+}
+.manage-bookings .fullresto-rating .ratings > div:first-child {
+    background-size: 16px !important;
+    width: 80px;
+    display: inline-block;
+    height: 15px;
+    margin: 0px 5px;
+}
+.manage-bookings .fullresto-rating .ratings > div:first-child + div {
+    background-size: 14px !important;
+    width: 65px;
+    display: inline-block;
+    height: 15px;
+    margin: 0px 5px;
+}
+.perx-item .fullresto-detail .ratings > div > div {
+    width: 0px;
+    height: 17px;
+    background-size: 14px !important;
+}
+.fullresto-rating .ratings > div > div {
+    width: 0px;
+    height: 25px;
+    background-size: 18px !important;
+}
+.manage-bookings .fullresto-rating .ratings > div:first-child > div {
+    background-size: 16px !important;
+}
+.manage-bookings .fullresto-rating .ratings > div:first-child + div > div {
+    background-size: 14px !important;
+}
+.perx-item .fullresto-detail .ratings > div:first-child,
+.fullresto-rating .ratings > div:first-child {
+    background: url(../images/star-off.svg) repeat-x;
+}
+.perx-item .fullresto-detail .ratings > div:first-child > div,
+.fullresto-rating .ratings > div:first-child > div {
+    background: url(../images/star-on.svg) repeat-x;
+}
+.perx-item .fullresto-detail .ratings > div:first-child + div,
+.fullresto-rating .ratings > div:first-child + div {
+    background: url(../images/price-off.svg) repeat-x;
+}
+.perx-item .fullresto-detail .ratings > div:first-child + div > div,
+.fullresto-rating .ratings > div:first-child + div > div {
+    background: url(../images/price-on.svg) repeat-x;
+}
+.perx-item.rate-05 .fullresto-detail .ratings > div:first-child > div,
+.perx-item.price-rate-05 .fullresto-detail .ratings > div:first-child + div > div {
+    width: 7px;
+}
+.fullresto-rating.rate-05 .ratings > div:first-child > div,
+.fullresto-rating.price-rate-05 .ratings > div:first-child + div > div {
+    width: 9px;
+}
+.manage-bookings .fullresto-rating.rate-05 .ratings > div:first-child > div {
+    width: 8px;
+}
+.manage-bookings .fullresto-rating.price-rate-05 .ratings > div:first-child + div > div {
+    width: 7px;
+}
+.perx-item.rate-1 .fullresto-detail .ratings > div:first-child > div,
+.perx-item.price-rate-1 .fullresto-detail .ratings > div:first-child + div > div {
+    width: 14px;
+}
+.fullresto-rating.rate-1 .ratings > div:first-child > div,
+.fullresto-rating.price-rate-1 .ratings > div:first-child + div > div {
+    width: 18px;
+}
+.manage-bookings .fullresto-rating.rate-1 .ratings > div:first-child > div {
+    width: 16px;
+}
+.manage-bookings .fullresto-rating.price-rate-1 .ratings > div:first-child + div > div {
+    width: 14px;
+}
+.perx-item.rate-15 .fullresto-detail .ratings > div:first-child > div,
+.perx-item.price-rate-15 .fullresto-detail .ratings > div:first-child + div > div {
+    width: 21px;
+}
+.fullresto-rating.rate-15 .ratings > div:first-child > div,
+.fullresto-rating.price-rate-15 .ratings > div:first-child + div > div {
+    width: 27px;
+}
+.manage-bookings .fullresto-rating.rate-15 .ratings > div:first-child > div {
+    width: 24px;
+}
+.manage-bookings .fullresto-rating.price-rate-15 .ratings > div:first-child + div > div {
+    width: 21px;
+}
+.perx-item.rate-2 .fullresto-detail .ratings > div:first-child > div,
+.perx-item.price-rate-2 .fullresto-detail .ratings > div:first-child + div > div {
+    width: 28px;
+}
+.fullresto-rating.rate-2 .ratings > div:first-child > div,
+.fullresto-rating.price-rate-2 .ratings > div:first-child + div > div {
+    width: 36px;
+}
+.manage-bookings .fullresto-rating.rate-2 .ratings > div:first-child > div {
+    width: 32px;
+}
+.manage-bookings .fullresto-rating.price-rate-2 .ratings > div:first-child + div > div {
+    width: 28px;
+}
+.perx-item.rate-25 .fullresto-detail .ratings > div:first-child > div,
+.perx-item.price-rate-25 .fullresto-detail .ratings > div:first-child + div > div {
+    width: 35px;
+}
+.fullresto-rating.rate-25 .ratings > div:first-child > div,
+.fullresto-rating.price-rate-25 .ratings > div:first-child + div > div {
+    width: 45px;
+}
+.manage-bookings .fullresto-rating.rate-25 .ratings > div:first-child > div {
+    width: 40px;
+}
+.manage-bookings .fullresto-rating.price-rate-25 .ratings > div:first-child + div > div {
+    width: 35px;
+}
+.perx-item.rate-3 .fullresto-detail .ratings > div:first-child > div,
+.perx-item.price-rate-3 .fullresto-detail .ratings > div:first-child + div > div {
+    width: 42px;
+}
+.fullresto-rating.rate-3 .ratings > div:first-child > div,
+.fullresto-rating.price-rate-3 .ratings > div:first-child + div > div {
+    width: 54px;
+}
+.manage-bookings .fullresto-rating.rate-3 .ratings > div:first-child > div {
+    width: 48px;
+}
+.manage-bookings .fullresto-rating.price-rate-3 .ratings > div:first-child + div > div {
+    width: 42px;
+}
+.perx-item.rate-35 .fullresto-detail .ratings > div:first-child > div,
+.perx-item.price-rate-35 .fullresto-detail .ratings > div:first-child + div > div {
+    width: 49px;
+}
+.fullresto-rating.rate-35 .ratings > div:first-child > div,
+.fullresto-rating.price-rate-35 .ratings > div:first-child + div > div {
+    width: 63px;
+}
+.manage-bookings .fullresto-rating.rate-35 .ratings > div:first-child > div {
+    width: 56px;
+}
+.manage-bookings .fullresto-rating.price-rate-35 .ratings > div:first-child + div > div {
+    width: 49px;
+}
+.perx-item.rate-4 .fullresto-detail .ratings > div:first-child > div,
+.perx-item.price-rate-4 .fullresto-detail .ratings > div:first-child + div > div {
+    width: 56px;
+}
+.fullresto-rating.rate-4 .ratings > div:first-child > div,
+.fullresto-rating.price-rate-4 .ratings > div:first-child + div > div {
+    width: 72px;
+}
+.manage-bookings .fullresto-rating.rate-4 .ratings > div:first-child > div {
+    width: 64px;
+}
+.manage-bookings .fullresto-rating.price-rate-4 .ratings > div:first-child + div > div {
+    width: 56px;
+}
+.perx-item.rate-45 .fullresto-detail .ratings > div:first-child > div,
+.perx-item.price-rate-45 .fullresto-detail .ratings > div:first-child + div > div {
+    width: 63px;
+}
+.fullresto-rating.rate-45 .ratings > div:first-child > div,
+.fullresto-rating.price-rate-45 .ratings > div:first-child + div > div {
+    width: 81px;
+}
+.manage-bookings .fullresto-rating.rate-45 .ratings > div:first-child > div {
+    width: 72px;
+}
+.manage-bookings .fullresto-rating.price-rate-45 .ratings > div:first-child + div > div {
+    width: 63px;
+}
+.perx-item.rate-5 .fullresto-detail .ratings > div:first-child > div,
+.perx-item.price-rate-5 .fullresto-detail .ratings > div:first-child + div > div {
+    width: 70px;
+}
+.fullresto-rating.rate-5 .ratings > div:first-child > div,
+.fullresto-rating.price-rate-5 .ratings > div:first-child + div > div {
+    width: 90px;
+}
+.manage-bookings .fullresto-rating.rate-5 .ratings > div:first-child > div {
+    width: 80px;
+}
+.manage-bookings .fullresto-rating.price-rate-5 .ratings > div:first-child + div > div {
+    width: 70px;
+}
+.manage-bookings .fullresto-rating > span {
+    font-weight: 100;
+    font-size: 12px;
+}
+
+/**
+ * Favorite
+ */
+button[data-mod=favorite] {
+    cursor: default !important;
+}
+[fullresto] button[data-mod=favorite] {
+    cursor: pointer !important;
+}
+button[data-mod=favorite] > span {
+    color: #DBDBDB;
+    font-size: 26px;
+}
+.fullresto-rating.favorite button[data-mod=favorite] > span {
+    color: #ff7f00;
+}
+
+/**
+ * Detail Page
+ */
+.panel-body h2 {
+    margin-top: 0px;
+}
+.fullresto-location {
+    color: #6D6D6D;
+    margin-top: 5px;
+}
+.fullresto-location > div > div:first-child + div {
+    text-align: right;
+}
+.fullresto-detail .recent {
+    border: none !important;
+    box-shadow: none;
+    overflow: no-display !important;
+}
+
+.fullresto-detail .tabbable {
+    margin-top: 20px;
+}
+.fullresto-detail .tab-content .icon-facebook,
+.fullresto-detail .tab-content .icon-twitter {
+    font-size: 34px;
+}
+.fullresto-detail .input-group-addon > div {
+    width: 15px;
+}
+#merchant_images + div.panel-body > div:first-child {
+    position: relative;
+}
+#merchant_images + div.panel-body > div:first-child > div:first-child {
+    width: calc(100% - 90px);
+}
+
+/**
+ * Booking Panel
+ */
+.fullresto-detail .panel-heading {
+    background-color: #B60000;
+    color: #FFFFFF;
+}
+.fullresto-detail .panel-form .bookingdeal {
+    margin-bottom: 0px;
+}
+.fullresto-detail .panel-form .deals {
+    border: 1px solid #ccc;
+    margin-top: -1px;
+    cursor: pointer;
+}
+.fullresto-detail .panel-final {
+    display: none;
+}
+.fullresto-detail .panel-final h5 {
+    margin-top: 0px;
+    font-weight: bold;
+}
+.fullresto-detail .panel-form .form-control[readonly],
+.fullresto-detail .panel-final .form-control[readonly] {
+    background-color: #FFFFFF;
+}
+.fullresto-detail .input-group {
+    z-index: 2;
+}
+.panel-process {
+    position: absolute;
+    top: -8px;
+    left: 0px;
+    width: calc(100% - 32px);
+    height: calc(100% - 60px);
+    z-index: 100;
+    margin: 47px 16px;
+    padding: 100px 0px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.panel-process > div:first-child {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: gray;
+    opacity: 0.5;
+}
+.panel-process > div:first-child + div {
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    left: 0px;
+    z-index: 200;
+}
+
+/**
+ * Search
+ */
+.fullresto-search-quick {
+    width: 100%;
+    padding: 45px 20% 90px 20%;
+}
+.fullresto-search-quick > div {
+    position: relative;
+}
+.fullresto-search-quick .icon {
+    position: absolute;
+    left: auto;
+    right: 3px;
+    top: 1px;
+    bottom: 1px;
+    z-index: 2;
+    padding: 10px 5px;
+    font-size: 18px;
+    color: #B60000;
+}
+.fullresto-search-quick .form-control {
+    border-color: #B60000;
+}
+.fullresto-search {
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 25px 0px;
+}
+.fullresto-search > div {
+    width: 80%;
+}
+.fullresto-search .glyphicon {
+    font-size: 13px;
+}
+.fullresto-search > div > form > div:first-child {
+    margin-bottom: 10px;
+}
+.fullresto-search a {
+    color: #333 !important;
+}
+.fullresto-search .form-group {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.fullresto-access .fullresto-sort-label {
+    width: 0.5%;
+    text-align: center;
+    color: #333333;
+}
+
+/**
+ * Register / Login / Forgot Password / Reset Password
+ */
+.basic-form .fb-register,
+.basic-form .fb-login {
+    background-color: #3B5998;
+    color: #fff;
+}
+.basic-form .fb-register > span,
+.basic-form .fb-login > span {
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+/**
+ * Manage Bookings
+ */
+.manage-bookings .bg-info {
+    padding: 5px 10px;
+}
+.fullresto-qrcode > span {
+    font-size: 60px;
+}
+.fullresto-detail h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/**
+ * Jumbotron
+ */
+.fullresto-jumbotron {
+    position: relative;
+    border-top: 5px solid #808080;
+    margin-top: 50px;
+    background-color: #F2F2F2;
+    color: #333333;
+}
+.fullresto-jumbotron .fullresto-perks {
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+.fullresto-jumbotron .fullresto-perks > div {
+    margin-top: 10px;
+    color: #333333;
+    font-family: 'pacificoregular';
+}
+.fullresto-jumbotron .fullresto-register {
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+}
+.fullresto-jumbotron form {
+    margin: 10px 0px;
+}
+.fullresto-jumbotron .form-control {
+    border-color: #333333;
+}
+.fullresto-jumbotron + div {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    color: #FFFFFF;
+    padding: 12px;
+    background-color: #B0B0B0;
+}
+.fullresto-jumbotron-howto > div > div > div:first-child {
+    font-weight: bold;
+    margin: 20px 0px;
+    text-align: center;
+    font-size: 18px;
+}
+.fullresto-jumbotron-howto.fullresto-book-now > div > div > div:first-child {
+    font-size: 12px;
+}
+.fullresto-jumbotron-howto .thumbnail {
+    width: 156px;
+    height: 156px;
+    background-color: transparent;
+    text-align: center;
+    border: 3px solid #808080;
+}
+.fullresto-jumbotron-howto .thumbnail > .icon {
+    font-size: 72px;
+    color: #B60000;
+}
+
+/**
+ * How To
+ */
+.how-to .thumbnail {
+    width: 156px;
+    height: 156px;
+    background-color: transparent;
+    text-align: center;
+    border: 3px solid #808080;
+}
+.how-to .thumbnail > .icon {
+    font-size: 72px;
+    color: #B60000;
+}
+
+/**
+ * Tagline
+ */
+.fullresto-tagline {
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px #B60000;
+    font-family: 'pacificoregular';
+}
+
+/**
+ * Footer
+ */
+footer {
+    margin: 50px 0;
+}
+
+/**
+ * Icons
+ */
+.icon {
+    font-family: FontAwesome;
+}
+.icon-facebook {
+    color: #3B5998;
+}
+.icon-facebook:before {
+    content: "\f082";
+}
+.icon-facebook-f:before {
+    content: "\f09a";
+}
+.icon-twitter {
+    color: #55ACEE;
+}
+.icon-twitter:before {
+    content: "\f081";
+}
+.icon-form:before {
+    content: "\f022";
+}
+.icon-mobile:before {
+    content: "\f10b";
+}
+.icon-gift:before {
+    content: "\f06b";
+}
+.icon-calendar-o:before {
+    content: "\f133";
+}
+.icon-user:before {
+    content: "\f007";
+}
+.icon-users:before {
+    content: "\f0c0";
+}
+.icon-envelope:before {
+    content: "\f0e0";
+}
+.icon-tag:before {
+    content: "\f02b";
+}
+.icon-search:before {
+    content: "\f002";
+}
+.icon-map-marker:before {
+    content: "\f041";
+}
+.icon-spinner:before {
+    content: "\f110";
+}
+.icon-exclamation-circle:before {
+    content: "\f06a";
+}
+.icon-spin {
+    -webkit-animation: spin 2s infinite linear;
+    -moz-animation: spin 2s infinite linear;
+    -o-animation: spin 2s infinite linear;
+    animation: spin 2s infinite linear;
+}
+
+/**
+ * Notifications
+ */
+#notify-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    z-index: 100;
+}
+#notify-wrapper > div {
+    font-size: 12px;
+    padding: 5px;
+    width: 300px;
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+    z-index: 100;
+    border-color: #ccc;
+    color: #000;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px #D9D9D9;
+}
+#notify-wrapper > div.error {
+    background-color: #f2dede;
+    box-shadow: 1px 1px 5px #f2dede;
+}
+#notify-wrapper > div.success {
+    background-color: #dff0d8;
+    box-shadow: 1px 1px 5px #dff0d8;
+}
+
+/**
+ * Bootstrap Overrides
+ */
+.navbar {
+    background-color: #B60000;
+    border-color: #B74635;
+    border-bottom-width: 2px;
+}
+.navbar-brand {
+    color: #FFFFFF !important;
+    font-size: 22px;
+    font-weight: bold;
+}
+.btn-link[disabled],
+.btn-link[disabled]:hover {
+    color: blue !important; /*TODO: Change*/
+    cursor: default;
+}
+button.btn-link {
+    text-decoration: none !important;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.navbar-inverse .navbar-nav>li>a:hover,
+.navbar-inverse .navbar-nav>li>a:focus {
+    color: #FFFFFF;
+}
+.carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
+    width: 100%;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: #B60000;
+    background-color: #B74635;
+}
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:active,
+.navbar-inverse .navbar-toggle:focus {
+    background-color: #B60000;
+}
+.table>tbody+tbody,
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    border-top: none;
+}
+
+/**
+ * Fonts
+ */
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
